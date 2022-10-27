@@ -19,7 +19,6 @@ namespace StringManipulationChallenge
             //
             //
 
-
         }
 
         // This method has one string parameter. 
@@ -28,7 +27,10 @@ namespace StringManipulationChallenge
         // 2) print the result to the console and 
         // 3) return the new string.
         public static string StringToUpper(string x){
-            throw new NotImplementedException("StringToUpper method not implemented.");
+            //throw new NotImplementedException("StringToUpper method not implemented.");
+            string newString = x.ToUpper();
+            Console.WriteLine(newString);
+            return newString;
         }
 
         // This method has one string parameter. 
@@ -37,8 +39,10 @@ namespace StringManipulationChallenge
         // 2) print the result to the console and 
         // 3) return the new string.        
         public static string StringToLower(string x){
-            throw new NotImplementedException("StringToUpper method not implemented.");
-
+            //throw new NotImplementedException("StringToUpper method not implemented.");
+            string newString = x.ToLower();
+            Console.WriteLine(newString);
+            return newString;
         }
         
         // This method has one string parameter. 
@@ -47,8 +51,23 @@ namespace StringManipulationChallenge
         // 2) print the result to the console and 
         // 3) return the new string.
         public static string StringTrim(string x){
-            throw new NotImplementedException("StringTrim method not implemented.");
-
+            //throw new NotImplementedException("StringTrim method not implemented.");
+            char [] arr = x.ToCharArray();
+            string newString = "";
+            //Get rid of starting white space
+            int start = 0;
+            while (arr[start] == ' ') {
+                start++;
+            }
+            int end = arr.Length-1;
+            while(arr[end] == ' ') {
+                end--;
+            }
+            for (int i = start; i <= end; i++) {
+                newString = newString + arr[i];
+            }
+            Console.WriteLine(newString);
+            return newString;
         }
         
         // This method has two parameters, one string and one integer. 
@@ -57,7 +76,14 @@ namespace StringManipulationChallenge
         // 2) print the result to the console and 
         // 3) return the new string.
         public static string StringSubstring(string x, int elementNum){
-            throw new NotImplementedException("StringSubstring method not implemented.");
+            //throw new NotImplementedException("StringSubstring method not implemented.");
+            char [] arr = x.ToCharArray();
+            string newString = "";
+            for (int i = elementNum; i < arr.Length; i++) {
+                newString = newString + arr[i];
+            }
+            Console.WriteLine(newString);
+            return newString;
 
         }
 
@@ -66,7 +92,14 @@ namespace StringManipulationChallenge
         // 1) search the string parameter for the char parameter
         // 2) return the index of the char.
         public static int SearchChar(string userInputString, char x){
-            throw new NotImplementedException("SearchChar method not implemented.");
+            //throw new NotImplementedException("SearchChar method not implemented.");
+            char [] arr = userInputString.ToCharArray();
+            for (int i = 0; i < arr.Length; i++) {
+                if (arr[i] == x) {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         // This method has two string parameters.
@@ -74,7 +107,8 @@ namespace StringManipulationChallenge
         // 1) concatenate the two strings with a space between them.
         // 2) return the new string.
         public static string ConcatNames(string fName, string lName){
-            throw new NotImplementedException("ConcatNames method not implemented.");
+            //throw new NotImplementedException("ConcatNames method not implemented.");
+            return fName + " " + lName;
         }
 
 
